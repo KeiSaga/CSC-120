@@ -1,2 +1,2 @@
-# Saga-CSC---120
+# CSC-120
 Educational
