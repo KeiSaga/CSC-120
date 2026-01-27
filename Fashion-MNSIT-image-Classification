@@ -1,0 +1,77 @@
+1. What is the Fashion MNIST dataset?
+
+The Fashion MNIST dataset is a collection of 70,000 grayscale images of clothing items used for image classification tasks. 
+Each image is 28×28 pixels and belongs to one of 10 categories such as T-shirt, Trouser, Dress, Sneaker, and Bag. 
+It is commonly used as a beginner-friendly dataset in machine learning because it replaces the classic handwritten digits MNIST with more realistic object images while keeping the same format.
+
+2. Why do we normalize image pixel values before training?
+
+We normalize pixel values (divide by 255) to convert them from the range 0–255 to 0–1. This helps because:
+
+- It makes the model train faster
+
+- It improves numerical stability
+
+- It helps the neural network learn more effectively
+
+- Prevents large input values from causing unstable weight updates
+
+Normalization ensures all inputs are on a similar scale, which is important for gradient-based learning.
+
+3. List the layers used in the neural network and their functions.
+
+Layers used:
+
+  1.Flatten Layer
+
+- Converts the 28×28 image into a 1D vector (784 values)
+
+- Prepares the image data to be fed into dense (fully connected) layers
+
+  2.Dense Layer (128 neurons, ReLU activation)
+
+- This is the hidden layer
+
+- Learns important features and patterns from the image
+
+- ReLU introduces non-linearity, allowing the model to learn complex relationships
+
+  3.Dense Output Layer (10 neurons)
+
+- Produces one output score for each clothing category
+
+- These scores (logits) are converted to probabilities using Softmax during prediction
+
+4. What does an epoch mean in model training?
+
+An epoch is one complete pass of the entire training dataset through the neural network.
+If you train for 10 epochs, it means the model has seen all training images 10 times to improve its learning.
+
+5. Compare the predicted label and actual label for the first test image.
+
+The model predicts a label using the highest probability from the output layer.
+If the predicted label matches the actual label, the prediction is correct and will appear in blue in the graph. If they are different, the prediction is wrong and shown in red.
+
+Example:
+
+The predicted label for the first test image is Sneaker, and the actual label is Sneaker, which means the model classified the image correctly.
+
+
+
+6. What could be done to improve the model’s accuracy?
+
+Several improvements can be made:
+
+- Increase the number of neurons in hidden layers (e.g., 256)
+
+- Add more hidden layers (deeper network)
+
+- Train for more epochs
+
+- Use Dropout to reduce overfitting
+
+- Use Convolutional Neural Networks (CNNs) instead of only dense layers (better for images)
+
+- Tune learning rate and optimizer settings
+
+- Use data augmentation
